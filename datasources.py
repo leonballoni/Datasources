@@ -199,14 +199,38 @@ class DremioSource():
     '''# Dremio querying tool
         \n ## login
         \n \t Generate a token necessary to use the next methods.
+        \n To login is necessary the following inputs when instantiating (constructing) the class:
+
+            server_ip: url or dns
+            user: the name of the user within Dremio server
+            pswd: its password
+
         \n ## create_job_id
         \n \t Execute a job within Dremio and return its Id.
+        \n Every task given to Dremio generates a job and it uses SQL (as a instruction)
+
+            sql_query: a SQL command
+
         \n ## query_status
         \n \t Shows job id status. Necessary to get status and row count to gather the results.
+        \n all it needs is the job_id obtained from create_job_id method
         \n ## query_single_result
         \n \t Returns the executed job id results. Limited to 500 each query with a offset parameter
+        \n using the job_id it can retrieve the result - if any - from the job_id.
+
+            job_id: the hash code given when you create a job
+            offset: where to start the retrieving of results (default 0)
+            limit: how many items to retrieve (default 100, max 500 per request)
+
         \n ## query_results_all
         \n \t Returns all the data from the desired query.
+        \n everything from before just in one method.
+        Also de advantage of a single command retrieve all data from a datasource.
+
+            sql_query: a SQL command
+            all: retrieve everything (True) of just a few (False)
+            offset: where to start the retrieving of results (default 0) -> only works when all is False
+            limit: how many items to retrieve (default 100, max 500 per request) -> only works when all is False
     '''
 
     slots = 'token', 'server_ip', 'headers'
