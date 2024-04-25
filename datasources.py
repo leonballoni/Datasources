@@ -27,7 +27,7 @@ class BigquerySource():
     '''
     __slots__ = 'url', 'url2', 'client', 'eng'
 
-    def __init__(self, url2, url='https://www.googleapis.com/auth/cloud-platform'):
+    def __init__(self, url2 = None, url='https://www.googleapis.com/auth/cloud-platform'):
         self.url = url
         self.url2 = url2
 

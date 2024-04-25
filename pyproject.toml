@@ -1,0 +1,22 @@
+[tool.poetry]
+name = "datasources"
+version = "0.1.0"
+description = ""
+authors = ["Leon Balloni <leon.balloni@makes.ai>"]
+
+[tool.poetry.dependencies]
+python = "^3.10"
+google-oauth = "^1.0.0"
+google-cloud = "^0.34.0"
+SQLAlchemy = "^2.0.29"
+google-cloud-bigquery = "^3.21.0"
+pandas = "^2.2.2"
+python-dotenv = "^1.0.1"
+python-decouple = "^3.8"
+db-dtypes = "^1.2.0"
+
+[tool.poetry.dev-dependencies]
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
